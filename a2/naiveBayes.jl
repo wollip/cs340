@@ -27,14 +27,14 @@ function naiveBayes(X,y)
     p_xy = zeros(2,d,k)
 
     top = trues ./ reshape(counts, 1, k)
-    bot = sum(trues, dims = 2) ./ n
-    p_xy[1, :, :] = top ./ bot
-#     p_xy[1, :, :] = top
+#     bot = sum(trues, dims = 2) ./ n
+#     p_xy[1, :, :] = top ./ bot
+    p_xy[1, :, :] = top
 
     top = falses ./ reshape(counts, 1, k)
-    bot = sum(falses, dims = 2) ./ n
-    p_xy[2, :, :] = top ./ bot
-#     p_xy[2, :, :] = top
+#     bot = sum(falses, dims = 2) ./ n
+#     p_xy[2, :, :] = top ./ bot
+    p_xy[2, :, :] = top
 
     replace!(p_xy, NaN=>0)
 
