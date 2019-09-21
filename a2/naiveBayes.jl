@@ -36,7 +36,7 @@ function naiveBayes(X,y)
 #     p_xy[2, :, :] = top ./ bot
     p_xy[2, :, :] = top
 
-    replace!(p_xy, NaN=>0)
+#     replace!(p_xy, NaN=>0)
 
   function predict(Xhat)
     (t,d) = size(Xhat)
