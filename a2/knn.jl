@@ -4,7 +4,14 @@ function knn_predict(Xhat,X,y,k)
   (n,d) = size(X)
   (t,d) = size(Xhat)
   k = min(n,k) # To save you some debuggin
-  return fill(1,t)
+    
+  distancesMatrix = distancesSquared(Xhat, X)
+  yhat = zeros(t)
+  for i in 1:t
+    perm = partialsortperm(distancesMatrix[i, :], 1:k)
+    yhat[i] = mode(y[perm])
+  end
+  return yhat
 end
 
 function knn(X,y,k)
