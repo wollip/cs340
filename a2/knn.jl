@@ -32,7 +32,7 @@ function cknn(X,y,k)
 			push!(ycond,y[i])
     		end
 	end
-
+    println("length of cond is: ", length(ycond))
 	predict(Xhat) = knn_predict(Xhat,Xcond,ycond,k)
 	return GenericModel(predict)
 end
