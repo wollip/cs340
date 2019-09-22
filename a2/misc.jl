@@ -40,5 +40,5 @@ function distancesSquared(X1,X2)
 	(n,d) = size(X1)
 	(t,d2) = size(X2)
 	@assert(d==d2)
-	return X1.^2*ones(d,t) + ones(n,d)*(X2').^2 - 2X1*X2'
+	return X1.^2*ones(d,t) + ones(n,d)*(X2').^2 - 2X1.^1*X2'
 end
