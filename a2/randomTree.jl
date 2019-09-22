@@ -1,4 +1,4 @@
-function randomStump(X,y)
+function randomStump(X,y) # Note this is identical to decisionStump_infogain's stump, it isn't actually random.
 	# Fits a decision stump based on inequality rule
 
 	# Get the size of the data matrix
