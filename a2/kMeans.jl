@@ -60,8 +60,9 @@ while changes != 0
 	end
 
 	@printf("Running k-means, changes = %d\n",changes)
+    println("KMeansError: ", kMeansError2(X, y, W)) 
 end
-
+    
 function predict(Xhat)
 	(t,d) = size(Xhat)
 
